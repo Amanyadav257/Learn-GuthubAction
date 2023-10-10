@@ -1,0 +1,27 @@
+ 1 name: Hello World to workflow
+ 2
+ 3 on:
+ 4    push:
+ 5      branches:
+ 6         - main
+ 7       pull_request:
+ 8         branches:
+ 9           - main
+ 10          workflow_dispatch:
+
+ 11 jobs:
+ 12    hello:
+ 13     runs-on: windows-latest
+ 14     steps:
+ 15       - uses: actions/checkout@v2
+ 16       - name: hello world
+ 17        run: echo "Hello world"
+ 18        shell: bash
+ 19 
+ 20  goodbye:
+ 21    runs-on:  windows-latest
+ 22    steps:
+ 23      - name: goodbye world
+ 24        run: echo "Goodbye world"
+ 25        shell: bash
+
